@@ -1,0 +1,44 @@
+---
+title: Blog
+
+fields:
+  author:
+    display: Author
+    required: true
+    type: users
+
+  content:
+    display: Page Content
+    required: false
+    default:
+    type: markitup
+
+  categories:
+    display: Categories
+    type: suggest
+    create: false
+    options:
+      one: Media Release
+      two: In The News
+
+  tags:
+    display: Tags
+    type: suggest
+    create: true
+    max_items: 3
+    taxonomy:
+      folder: blog
+      type: tags
+  
+  country:
+    type: linked
+    display: Country
+    allow_blank: true
+    options_file: countries
+    link_to: province
+
+  province:
+    type: linked
+    display: Province/State
+    options_key: provinces
+---
