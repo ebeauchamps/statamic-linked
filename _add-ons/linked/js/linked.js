@@ -1,6 +1,9 @@
 $( "select[data-linked-linkto]" ).change(function() {
 	var selection = $(this).val();
 	var linked_field = $(this).attr("data-linked-linkto");
+	
+	// have to do the `$=` selector because in a grid the field is `page][0][foo` so
+	// just look for it at the end.
 	var lookup = $('select[data-linked-field$="' + linked_field + '"]').attr("data-linked-key");
 	
 	// get the related values
