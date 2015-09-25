@@ -41,4 +41,10 @@ fields:
     type: linked
     display: Province/State
     options_key: provinces
+    link_to: city
+
+  city:
+    type: linked
+    display: Main City
+    options_key: cities
 ---
